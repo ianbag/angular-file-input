@@ -1,0 +1,11 @@
+<h2>Angular Input File</h2>
+<p>Componente para carregar múltiplos arquivos e transformar em Base64</p>
+<hr>
+<button mat-raised-button class="mat-primary" (click)="uploadFile.click()">Carregar arquivo!
+    <input #uploadFile type="file" name="uploadFile" style="display: none;" (change)="uploadStorageClient($event)"
+        multiple>
+</button>
+
+<div *ngFor="let file of filesUpload; let i = index">
+    {{file.name}} <button mat-icon-button class="mat-warn" (click)="removeFileLocal(i)">X</button>
+</div>
